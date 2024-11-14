@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texter.Api", "Texter.Api\Texter.Api.csproj", "{B10F41FE-8E01-4E42-9C67-34AB9BDFA4D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texter.App", "Texter.App\Texter.App.csproj", "{2BF39732-5ECD-4138-88F6-9943CA4D5D0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texter.Infrastructure", "Texter.Infrastructure\Texter.Infrastructure.csproj", "{9A0C084B-1608-4055-8930-9ECA59824C16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Texter.Domain", "Texter.Domain\Texter.Domain.csproj", "{E815C71B-1251-4069-B2F1-B777AA54BCC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B10F41FE-8E01-4E42-9C67-34AB9BDFA4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10F41FE-8E01-4E42-9C67-34AB9BDFA4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10F41FE-8E01-4E42-9C67-34AB9BDFA4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10F41FE-8E01-4E42-9C67-34AB9BDFA4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BF39732-5ECD-4138-88F6-9943CA4D5D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF39732-5ECD-4138-88F6-9943CA4D5D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF39732-5ECD-4138-88F6-9943CA4D5D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF39732-5ECD-4138-88F6-9943CA4D5D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0C084B-1608-4055-8930-9ECA59824C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0C084B-1608-4055-8930-9ECA59824C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0C084B-1608-4055-8930-9ECA59824C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0C084B-1608-4055-8930-9ECA59824C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E815C71B-1251-4069-B2F1-B777AA54BCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E815C71B-1251-4069-B2F1-B777AA54BCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E815C71B-1251-4069-B2F1-B777AA54BCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E815C71B-1251-4069-B2F1-B777AA54BCC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
