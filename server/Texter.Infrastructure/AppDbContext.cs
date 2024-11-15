@@ -1,13 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Texter.Domain.Models;
 
 namespace Texter.Infrastructure;
 
 public class AppDbContext(
     IConfiguration configuration
-): DbContext{
+) : DbContext
+{
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("User Id=postgres;Host=localhost;Database=chat_db;Port=5432;Password=qwer1234;");
+        var connectionString = configuration.GetConnectionString("DB");
+        optionsBuilder.UseNpgsql(connectionString);
     }
+
+    public required DbSet<User> Users { get; set; }
+    public required DbSet<Message> Messages { get; set; }
+    public required DbSet<Chat> Chats { get; set; }
 }
