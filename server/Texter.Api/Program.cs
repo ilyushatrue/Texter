@@ -1,5 +1,6 @@
 
 using Texter.Api.Middlewares;
+using Texter.App.Hubs;
 using Texter.Infrastructure;
 
 namespace Texter.Api;
@@ -11,15 +12,18 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddScoped<ExceptionHandlingMiddleware>();
         builder.Services.AddDbContext<AppDbContext>();
-        builder.Services.AddCors(cors => cors.AddPolicy("localhost_cors", policy => policy
+        var localhostCorsName = "localhost_cors";
+        builder.Services.AddCors(cors => cors.AddPolicy(localhostCorsName, policy => policy
+            .WithOrigins("http://localhost:4201", "http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod()
-            .AllowCredentials()
-            .WithOrigins("http://localhost:4201", "http://localhost:4200")));
+            .AllowCredentials()));
         builder.Services.AddControllers();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
         builder.Services.AddDomainServices();
+        builder.Services.AddSignalR();
+
         var app = builder.Build();
 
         if (app.Environment.IsDevelopment())
@@ -28,10 +32,10 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        app.UseCors("localhost_cors");
+        app.UseCors(localhostCorsName);
+        app.MapHub<UserHub>("/user-hub");
         app.UseMiddleware<ExceptionHandlingMiddleware>();
         app.UseAuthorization();
-
         app.MapControllers();
 
         app.Run();
