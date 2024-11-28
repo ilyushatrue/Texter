@@ -11,7 +11,8 @@ public class AppDbContext(
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var connectionString = configuration.GetConnectionString("DB");
-        optionsBuilder.UseNpgsql(connectionString);
+        optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
+        optionsBuilder.UseNpgsql(connectionString).EnableSensitiveDataLogging();
     }
 
     public required DbSet<User> Users { get; set; }

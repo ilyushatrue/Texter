@@ -10,6 +10,7 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Logging.SetMinimumLevel(LogLevel.Information);
         builder.Services.AddScoped<ExceptionHandlingMiddleware>();
         builder.Services.AddDbContext<AppDbContext>();
         var localhostCorsName = "localhost_cors";

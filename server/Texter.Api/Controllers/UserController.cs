@@ -14,7 +14,11 @@ public class UserController(
     [HttpGet]
     public async Task<ActionResult<IEnumerable<User>>> GetAll()
     {
-        var users = await dbContext.Users.ToListAsync();
+        IQueryable<User> users = dbContext.Users;
+
+        var i = users.Select(x => x.Id).Contains(1);
+        var i2 = users.Select(x => x.Id).Contains(2);
+
         return Ok(users);
     }
 
